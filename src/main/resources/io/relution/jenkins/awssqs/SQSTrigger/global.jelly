@@ -20,16 +20,17 @@
 	xmlns:d="jelly:define"
 	xmlns:l="/lib/layout"
 	xmlns:t="/lib/hudson"
-	xmlns:f="/lib/form">
+	xmlns:f="/lib/form"
+	xmlns:p="/io/relution/jenkins/awssqs">
 	<f:section title="${%Configuration of Amazon SQS queues}">
 		<f:nested>
-			<table style="width:100%">
+			<p:blockWrapper>
 				<f:block>
 					<f:repeatable
 						field="sqsQueues"
 						minimum="${1}"
 						noAddButton="true">
-						<table style="width:100%">
+						<p:blockWrapper>
 							<st:include
 								from="${descriptor}"
 								page="${descriptor.configPage}" />
@@ -46,10 +47,10 @@
 										style="margin-left: 1em;" />
 								</div>
 							</f:entry>
-						</table>
+						</p:blockWrapper>
 					</f:repeatable>
 				</f:block>
-			</table>
+			</p:blockWrapper>
 		</f:nested>
 	</f:section>
 </j:jelly>
